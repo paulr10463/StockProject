@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock App</title>
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <script type="module" src="/scripts/main.js"></script>
+    <div class="container">
+      <h1>Registro de Acciones</h1>
+      <form id="stockForm" class="stockFormContainer">
+          <div class="stocksInputContainer">
+              <div class="stockContainer">
+                  <label for="stockName">Nombre de la Acción</label>
+                  <input type="text" id="stockName" required>
+              </div>
+              <div class="stockContainer">
+                  <label for="purchaseDate">Fecha de Compra</label>
+                  <input type="date" id="purchaseDate" required>
+              </div>
+              <div class="stockContainer">
+                  <label for="purchasePrice">Precio de Compra</label>
+                  <input type="number" id="purchasePrice" min="0" step="0.01" required>
+              </div>
+              <div class="stockContainer">
+                  <label for="quantity">Cantidad de Acciones</label>
+                  <input type="number" id="quantity" min="0" required>
+              </div>
+          </div>        
+          <button id="submitButton" type="submit">Añadir</button>
+      </form>
+  </div>
+  
+  <div class="container">
+      <table id="stockTable">
+          <thead>
+              <tr>
+                  <th>Nombre</th>
+                  <th>Cantidad</th>
+                  <th>Fecha</th>
+                  <th>Precio Unitario</th>
+                  <th>Total</th>
+              </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+      </table>
+      <div id="stockList">
+          <ul id="stockItems"></ul>
+      </div>
+  </div>
+  </body>
+</html>

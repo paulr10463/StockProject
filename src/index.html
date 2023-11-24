@@ -15,21 +15,24 @@
       <h1>Registro de Acciones</h1>
       <form id="stockForm" class="stockFormContainer">
           <div class="stocksInputContainer">
-              <div class="stockContainer">
-                  <label for="stockName">Nombre de la Acción</label>
-                  <input type="text" id="stockName" required>
+              <div class="form__group field">
+                <input class="form__field" type="text" id="stockName" required>
+                  <label class="form__label" for="stockName">Nombre de la Acción</label>  
               </div>
-              <div class="stockContainer">
-                  <label for="purchaseDate">Fecha de Compra</label>
-                  <input type="date" id="purchaseDate" required>
+              <div class="stockContainer form__group field">
+                  
+                  <input class="form__field" type="date" id="purchaseDate" required>
+                  <label class="form__label" for="purchaseDate">Fecha de Compra</label>
               </div>
-              <div class="stockContainer">
-                  <label for="purchasePrice">Precio de Compra</label>
-                  <input type="number" id="purchasePrice" min="0" step="0.01" required>
+              <div class="stockContainer form__group field">
+                  
+                  <input class="form__field" type="number" id="purchasePrice" min="0" step="0.01" required>
+                  <label class="form__label" for="purchasePrice">Precio de Compra</label>
               </div>
-              <div class="stockContainer">
-                  <label for="quantity">Cantidad de Acciones</label>
-                  <input type="number" id="quantity" min="0" required>
+              <div class="stockContainer form__group field">
+                  
+                  <input class="form__field" type="number" id="quantity" min="0" required>
+                  <label class="form__label" for="quantity">Cantidad de Acciones</label>
               </div>
           </div>        
           <button id="submitButton" type="submit">Añadir</button>

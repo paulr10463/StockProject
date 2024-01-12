@@ -13,7 +13,13 @@ Integrantes:
 
 ## Casos de Uso
 
-![Diagrama de Casos de Uso](assets/CasosDeUso.PNG)
+<p align="center">
+  <img src="assets/CasosDeUso.PNG" alt="Diagrama de Casos de Uso">
+</p>
+
+<p align="center">
+  <em>Fig. 1. Diagrama de Casos de Uso</em>
+</p>
 
 ### ESCENARIO BÁSICO:
 1. El caso de uso comienza con el ingreso del nombre de acción, fecha de compra, precio de acción y cantidad de acciones por parte del usuario.
@@ -36,6 +42,6 @@ Se realizó el diseño de la interfaz gráfica en la plataforma Figma, como se p
 </p>
 
 <p align="center">
-  <em>Fig. 1. Prototipo de UI de alta fidelidad</em>
+  <em>Fig. 2. Prototipo de UI de alta fidelidad</em>
 </p>
 

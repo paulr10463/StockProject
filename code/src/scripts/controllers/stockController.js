@@ -1,5 +1,5 @@
 import Stock from '../models/stock.js';
-import { isNumericAndPositive , isBlank } from '../utils.js';
+import { areStockValuesValid } from '../utils.js';
 
 export class StockController {
     constructor(model, view) {
@@ -12,7 +12,7 @@ export class StockController {
 
     addStock(stockInput) {
         const { stockName, purchaseDate, purchasePrice, quantity } = stockInput;
-        if (this.areStockValuesValid(stockName, purchaseDate, purchasePrice, quantity)) {
+        if (areStockValuesValid(stockName, purchaseDate, purchasePrice, quantity)) {
             const stock = new Stock(stockName, purchaseDate, purchasePrice, quantity);
             this.model.addStock(stock);
             this.view.displayStock(stock);
@@ -21,8 +21,5 @@ export class StockController {
             this.view.showInputError();
             return;
         }
-    }
-    areStockValuesValid(stockName, purchaseDate, purchasePrice, quantity) {
-        return isNumericAndPositive(purchasePrice) && isNumericAndPositive(quantity) && !isBlank(stockName) && !isBlank(purchaseDate);
     }
 }

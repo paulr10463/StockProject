@@ -19,7 +19,7 @@ h1{
   color: var(--color-primary)
 }
 
-button{
+.submitButton{
   font-size: 1.5em;
   background-color: var(--color-background);
   border: 2px solid var(--color-primary);
@@ -34,7 +34,7 @@ button{
   font-family: 'Jura', sans-serif;
 }
 
-button:hover {
+.submitButton:hover {
   background-color: var(--color-primary);
   color: var(--color-background);
 }
@@ -64,8 +64,8 @@ button:hover {
   flex-direction: column;
   align-items: left;
   justify-content: space-between;
-  width: 20%;
   margin: 15px 30px;
+
 }
 
 .stockFormContainer {
@@ -79,6 +79,7 @@ button:hover {
   flex-direction: row;
   justify-content: space-between;
   margin: 20px 40px;
+  flex-wrap: wrap;
 }
 
 label {
@@ -113,7 +114,9 @@ table tbody tr td {
   position: relative;
   padding: 15px 0 0;
   margin-top: 10px;
-  width: 50%;
+  width: 100%;
+  flex: 0 0 20%;
+  min-width: 200px;
 }
 
 .form__field {

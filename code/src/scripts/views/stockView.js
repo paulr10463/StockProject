@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2'
+
 // stockView.js
 export class StockView {
     constructor() {
@@ -42,7 +44,12 @@ export class StockView {
     }
 
     showInputError() {
-        alert('Please fill all the fields');
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Por favor, llene todos los campos",
+            confirmButtonColor: "#3085d6",
+          });
     }
 
     addStockHandler(callback) {

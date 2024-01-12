@@ -22,13 +22,7 @@ export class StockController {
             return;
         }
     }
-
     areStockValuesValid(stockName, purchaseDate, purchasePrice, quantity) {
         return isNumericAndPositive(purchasePrice) && isNumericAndPositive(quantity) && !isBlank(stockName) && !isBlank(purchaseDate);
-    }
-
-    renderStocks() {
-        const stocks = this.model.getStocks();
-        stocks.forEach(stock => this.view.displayStock(stock));
     }
 }

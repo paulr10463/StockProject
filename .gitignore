@@ -1,1 +1,3 @@
 /.vscode
+/code/backend/node_modules
+/code/frontend/node_modules

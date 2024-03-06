@@ -5,15 +5,14 @@ export class StockView {
     constructor() {
         this.stockTable = document.getElementById("stockTable").getElementsByTagName('tbody')[0];
         this.stockNameInput = document.getElementById('stockName');
-        this.purchaseDateInput = document.getElementById('purchaseDate');
         this.purchasePriceInput = document.getElementById('purchasePrice');
         this.quantityInput = document.getElementById('quantity');
         this.submitButton = document.getElementById('submitButton');
+        this.overlayContent = document.getElementById('overlay-content-content');
     }
 
     cleanFields() {
         this.stockNameInput.value = '';
-        this.purchaseDateInput.value = '';
         this.purchasePriceInput.value = '';
         this.quantityInput.value = '';
     }
@@ -22,10 +21,12 @@ export class StockView {
         const newRow = this.stockTable.insertRow(this.stockTable.rows.length);
         const cells = [
             stock.name,
+            stock.purchase_date,
+            stock.purchase_price,
             stock.quantity,
-            stock.date,
-            stock.price,
-            stock.totalCost
+            stock.total,
+            stock.change,
+            stock.diff,
         ];
 
         cells.forEach((value, index) => {
@@ -36,11 +37,10 @@ export class StockView {
 
     getStockInput() {
         const stockName = this.stockNameInput.value;
-        const purchaseDate = this.purchaseDateInput.value;
         const purchasePrice = parseFloat(this.purchasePriceInput.value);
         const quantity = parseInt(this.quantityInput.value);
 
-        return { stockName, purchaseDate, purchasePrice, quantity };
+        return { stockName, purchasePrice, quantity };
     }
 
     showInputError() {
@@ -48,6 +48,34 @@ export class StockView {
             icon: "error",
             title: "Oops...",
             text: "Por favor, llene todos los campos",
+            confirmButtonColor: "#3085d6",
+          });
+    }
+
+    
+    showPersonalizedError(message) {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: message,
+            confirmButtonColor: "#3085d6",
+          });
+    }
+
+    showConfirmationMessage() {
+        Swal.fire({
+            icon: "success",
+            title: "¡Transacción exitosa!",
+            text: "La transacción se ha realizado con éxito",
+            confirmButtonColor: "#3085d6",
+          });
+    }
+
+    showErrorMessage() {
+        Swal.fire({
+            icon: "error",
+            title: "¡Transacción no registrada!",
+            text: "Hubo un error en el registro",
             confirmButtonColor: "#3085d6",
           });
     }
